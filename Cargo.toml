@@ -1,0 +1,26 @@
+[package]
+name = "sui-package-verify"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# remote
+# sui-source-validation = { git = "https://github.com/MystenLabs/sui.git" }
+# sui-source-validation = { path = "../sui/crates/sui-source-validation" }
+# sui-sdk = { git = "https://github.com/MystenLabs/sui.git" }
+# sui-move-build = { git = "https://github.com/MystenLabs/sui.git" }
+# move-core-types = { git = "https://github.com/MystenLabs/sui.git" }
+
+# local
+# Ensure you're using the same version of sui crates as your main project
+sui-source-validation = { path = "../sui/crates/sui-source-validation" }
+sui-sdk = { path = "../sui/crates/sui-sdk" }
+move-core-types = { path = "../sui/external-crates/move/crates/move-core-types" }
+sui-move-build = { path = "../sui/crates/sui-move-build" }
+
+# Utility dependencies
+clap = { version = "4.3", features = ["derive"] }
+tokio = { version = "1", features = ["full"] }
+anyhow = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
