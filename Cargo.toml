@@ -2,21 +2,27 @@
 name = "sui-package-verify"
 version = "0.1.0"
 edition = "2021"
+description = "CLI tool to verify Sui Move package source against on-chain bytecode"
+authors = ["avernikoz@gmail.com"]
+license = "MIT"
+repository = "https://github.com/avernikoz/sui-package-verify"
+documentation = "https://github.com/avernikoz/sui-package-verify#readme"
+keywords = ["sui", "move", "blockchain", "verification", "cli"]
+categories = ["command-line-utilities", "development-tools"]
 
 [dependencies]
 # remote
-# sui-source-validation = { git = "https://github.com/MystenLabs/sui.git" }
-# sui-source-validation = { path = "../sui/crates/sui-source-validation" }
-# sui-sdk = { git = "https://github.com/MystenLabs/sui.git" }
-# sui-move-build = { git = "https://github.com/MystenLabs/sui.git" }
-# move-core-types = { git = "https://github.com/MystenLabs/sui.git" }
+sui-source-validation = { git = "https://github.com/MystenLabs/sui.git" }
+sui-sdk = { git = "https://github.com/MystenLabs/sui.git" }
+move-core-types = { git = "https://github.com/MystenLabs/sui.git" }
+sui-move-build = { git = "https://github.com/MystenLabs/sui.git" }
 
 # local
 # Ensure you're using the same version of sui crates as your main project
-sui-source-validation = { path = "../sui/crates/sui-source-validation" }
-sui-sdk = { path = "../sui/crates/sui-sdk" }
-move-core-types = { path = "../sui/external-crates/move/crates/move-core-types" }
-sui-move-build = { path = "../sui/crates/sui-move-build" }
+# sui-source-validation = { path = "../sui/crates/sui-source-validation" }
+# sui-sdk = { path = "../sui/crates/sui-sdk" }
+# move-core-types = { path = "../sui/external-crates/move/crates/move-core-types" }
+# sui-move-build = { path = "../sui/crates/sui-move-build" }
 
 # Utility dependencies
 clap = { version = "4.3", features = ["derive"] }
