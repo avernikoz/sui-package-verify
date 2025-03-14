@@ -12,10 +12,10 @@ categories = ["command-line-utilities", "development-tools"]
 
 [dependencies]
 # remote
-sui-source-validation = { git = "https://github.com/MystenLabs/sui.git" }
-sui-sdk = { git = "https://github.com/MystenLabs/sui.git" }
-move-core-types = { git = "https://github.com/MystenLabs/sui.git" }
-sui-move-build = { git = "https://github.com/MystenLabs/sui.git" }
+sui-source-validation = { git = "https://github.com/MystenLabs/sui.git", version = "1.45.0" }
+sui-sdk = { git = "https://github.com/MystenLabs/sui.git", version = "1.45.0" }
+move-core-types = { git = "https://github.com/MystenLabs/sui.git", version = "0.0.4" }
+sui-move-build = { git = "https://github.com/MystenLabs/sui.git", version = "1.45.0" }
 
 # local
 # Ensure you're using the same version of sui crates as your main project
