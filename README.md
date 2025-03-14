@@ -3,9 +3,45 @@
 A command-line tool to verify Sui Move package source against on-chain bytecode. 
 This tool serves as a CLI wrapper around MystenLabs' [`sui-source-validation`](https://github.com/MystenLabs/sui/tree/main/crates/sui-source-validation) package, providing a convenient interface for source code verification.
 
+## Installation
+
+There are two ways to install `sui-package-verify`:
+
+### Option 1: Build from Source
+```bash
+# Clone the repository
+git clone https://github.com/avernikoz/sui-package-verify
+cd sui-package-verify
+
+# Build and install
+cargo install --path .
+
+# Or install directly using cargo
+cargo install --git https://github.com/avernikoz/sui-package-verify
+```
+
+### Option 2: Pre-built Binary
+Download the latest release from our [GitHub Releases page](https://github.com/avernikoz/sui-package-verify/releases).
+
+After downloading:
+```bash
+# Make it executable
+chmod +x sui-package-verify
+
+# On macOS, you might need to remove quarantine attribute
+xattr -d com.apple.quarantine sui-package-verify
+
+# Move to a directory in your PATH
+sudo mv sui-package-verify /usr/local/bin/
+# Or for your user only (no sudo needed)
+mv sui-package-verify ~/.local/bin/
+```
+
+Note: Each method has its own security implications. Choose the one that best fits your security requirements.
+
 ## Prerequisites
 
-Before using this tool, ensure your Sui Move package meets these requirements:
+Before using this tool, ensure that your target sui move package meets these requirements:
 
 ### 1. Package Address Configuration
 Your `Move.toml` must contain the published package address in the `[addresses]` section:
