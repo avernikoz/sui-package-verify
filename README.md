@@ -149,3 +149,9 @@ cp target/release/sui-package-verify ~/.local/bin/
 - Only local dependencies are supported in the package's `Move.toml` configuration.
 - The `published-at` field requirement comes from the underlying `sui-source-validation` package which we use for verification.
 - Some limitations are inherited from the `sui-source-validation` package as we're using it under the hood.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
+
+This tool uses several dependencies from [Mysten Labs](https://github.com/MystenLabs/sui), which are licensed under Apache-2.0.
