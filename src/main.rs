@@ -64,7 +64,7 @@ async fn main() -> Result<()> {
           if args.rpc_url.is_some() { "custom RPC" } else { &args.network });
     
     // Build the package
-    let build_config = BuildConfig::default();
+    let build_config = BuildConfig::new_for_testing();
     info!("Building package...");
     let compiled_package = build_config.build(&args.package_path)?;
     
