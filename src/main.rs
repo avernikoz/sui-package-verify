@@ -23,10 +23,6 @@ struct Args {
     #[clap(long)]
     address: Option<String>,
 
-    /// Verify dependencies as well
-    #[clap(long)]
-    with_deps: bool,
-
     /// Network to verify against (mainnet, testnet, devnet, localnet)
     #[clap(long, default_value = "mainnet")]
     network: String,
@@ -87,20 +83,9 @@ async fn main() -> Result<()> {
             .map_err(|e| anyhow!("Invalid address format: {}", e))?;
         
         info!("Verifying package at address {}", addr);
-        
-        if args.with_deps {
-            info!("Including dependencies in verification");
-            ValidationMode::root_and_deps_at(addr)
-        } else {
-            ValidationMode::root_at(addr)
-        }
+        ValidationMode::root_at(addr)
     } else {
-        if args.with_deps {
-            info!("Including dependencies in verification");
-            ValidationMode::root_and_deps()
-        } else {
-            ValidationMode::root()
-        }
+        ValidationMode::root()
     };
     
     // Run verification
