@@ -3,6 +3,8 @@
 A command-line tool to verify Sui Move package source against on-chain bytecode. 
 This tool serves as a CLI wrapper around MystenLabs' [`sui-source-validation`](https://github.com/MystenLabs/sui/tree/main/crates/sui-source-validation) package, providing a convenient interface for source code verification.
 
+> **Note**: For an alternative approach, you can use the built-in `sui client verify-source` command from the official Sui CLI.
+
 ## Installation
 
 There are two ways to install `sui-package-verify`:
